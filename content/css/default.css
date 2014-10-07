@@ -1,0 +1,322 @@
+/* RESETS */
+@media all {
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+	   v2.0 | 20110126
+	   License: none (public domain)
+	*/
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+}
+
+/* FONTS */
+@media all {
+	@font-face {
+		font-family: 'open-sans-light';
+		src: url('../fonts/open-sans/light/OpenSans-Light-webfont.eot');
+		src: url('../fonts/open-sans/light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype')
+		,	 url('../fonts/open-sans/light/OpenSans-Light-webfont.woff') format('woff')
+		,	 url('../fonts/open-sans/light/OpenSans-Light-webfont.ttf') format('truetype')
+		,	 url('../fonts/open-sans/light/OpenSans-Light-webfont.svg#open-sans-light') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'open-sans-regular';
+		src: url('../fonts/open-sans/regular/OpenSans-Regular-webfont.eot');
+		src: url('../fonts/open-sans/regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype')
+		,	 url('../fonts/open-sans/regular/OpenSans-Regular-webfont.woff') format('woff')
+		,	 url('../fonts/open-sans/regular/OpenSans-Regular-webfont.ttf') format('truetype')
+		,	 url('../fonts/open-sans/regular/OpenSans-Regular-webfont.svg#open-sans-regular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'open-sans-semi-bold';
+		src: url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.eot');
+		src: url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype')
+		,	 url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.woff') format('woff')
+		,	 url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.ttf') format('truetype')
+		,	 url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.svg#open-sans-semi-bold') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'ubuntu-mono-regular';
+		src: url('../fonts/ubuntu-mono/regular/ubuntumono-r-webfont.eot');
+		src: url('../fonts/ubuntu-mono/regular/ubuntumono-r-webfont.eot?#iefix') format('embedded-opentype')
+		,	 url('../fonts/ubuntu-mono/regular/ubuntumono-r-webfont.woff') format('woff')
+		,	 url('../fonts/ubuntu-mono/regular/ubuntumono-r-webfont.ttf') format('truetype')
+		,	 url('../fonts/ubuntu-mono/regular/ubuntumono-r-webfont.svg#ubuntu-mono-regular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		@font-face {
+			font-family: 'open-sans-light';
+			src: url('../fonts/open-sans/light/OpenSans-Light-webfont.svg#open-sans-light') format('svg');
+		}
+		@font-face {
+			font-family: 'open-sans-regular';
+			src: url('../fonts/open-sans/regular/OpenSans-Regular-webfont.svg#open-sans-regular') format('svg');
+		}
+		@font-face {
+			font-family: 'open-sans-semi-bold';
+			src: url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.svg#open-sans-semi-bold') format('svg');
+		}
+		@font-face {
+			font-family: 'ubuntu-mono-regular';
+			src: url('../fonts/ubuntu-mono/regular/ubuntumono-r-webfont.svg#ubuntu-mono-regular') format('svg');
+		}
+	}
+}
+
+/* GLOBAL */
+@media all {
+	html { font: normal 62.5% 'open-sans-light', arial, helvetica, sans-serif; }
+	body {
+		color: #333;
+		font-size: 1.5em;
+		line-height: 1.5;
+		overflow-x: hidden;
+	}
+}
+
+/* LAYOUT */
+@media all {
+	.layout {
+		overflow: hidden;
+		padding: 36px 12%;
+		width: 76%;
+	}
+	.header, .footer {
+		background-color: #e7e7e7;
+	}
+	.main {
+		background-color: #fafafa;
+	}
+}
+
+/* CONTENT */
+@media all {
+	h1 {
+		color: #555;
+		font-family: 'open-sans-semi-bold';
+		font-size: 3em;
+	}
+	p {
+		margin-top: 1.5em;
+	}
+	p:first-child {
+		margin-top: 0;
+	}
+	dl {
+		overflow: hidden;
+	}
+	dt {
+		float: left;
+		margin-right: 3%;
+		text-align: right;
+		white-space: nowrap;
+		width: 30%;
+	}
+	dt:after {
+		content: ' : ';
+	}
+	dd {
+		float: left;
+		width: 67%;
+	}
+	code {
+		font-family: 'ubuntu-mono-regular';
+	}
+	code.string {
+		color: #22b1e0;
+	}
+	code.number {
+		color: #d93a3a;
+	}
+	code.supplant {
+		color: #249268;
+	}
+	code.boolean {
+		color: #b847b8;
+	}
+	dt code:before, dt code:after,
+	code.string:before, code.string:after {
+		color: #666;
+		content: '\'';
+	}
+	code.object:before, code.supplant:before {
+		content: '{ ';
+	}
+	code.object:after, code.supplant:after {
+		content: ' }';
+	}
+	code.object:before, code.object:after {
+		color: #999;
+	}
+	code.supplant:before, code.supplant:after {
+		color: #249268;
+	}
+	button {
+		background-color: #555;
+		border: none;
+		border-radius: 3px;
+		color: #fff;
+		cursor: pointer;
+		font-family: 'open-sans-semi-bold';
+		margin: 0 7px;
+		padding: 0.175em 1em 0.225em;
+	}
+}
+
+/* PLAYGROUND/SANDBOX */
+@media all {
+	.playground {
+		margin-left: -1.75%;
+		margin-right: -1.75%;
+		margin-top: -2.4em;
+		overflow: hidden;
+	}
+	.sandbox {
+		border: 7px solid #ddd;
+		border-radius: 0 14px 14px;
+		float: left;
+		margin-left: 1.75%;
+		margin-right: 1.75%;
+		margin-top: 4.8em;
+		position: relative;
+		width: 46.5%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.sandbox h4 {
+		color: #c27386;
+		font-family: 'open-sans-semi-bold';
+		position: absolute;
+		top: -36px;
+	}
+	.sandbox .panel {
+		background-color: #f1f1f1;
+		border-bottom: 2px solid #fff;
+		border-left: 2px solid #fff;
+		border-right: 2px solid #fff;
+		color: #444;
+		font-size: 0.85em;
+		padding: 1.4em 1.75em;
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.panel[data-view="lab"] {
+		background-image: url(../images/graph-paper-texture.jpg);
+		border-radius: 0 7px 0 0;
+		border-top: 2px solid #fff;
+		min-height: 100px;
+	}
+	.panel[data-view="controls"] {
+		text-align: center;
+	}
+	.panel[data-view="config"] {
+		border-radius: 0 0 7px 7px;
+	}
+}
+
+/* TARGETS */
+@media all {
+	.target {
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, 0.75);
+		height: 100px;
+		margin: 0 auto;
+		width: auto;
+	}
+	/*.target:before {
+		bottom: -20px;
+		color: #555;
+		content: '[' attr(data-type) ']';
+		display: block;
+		font-family: 'ubuntu-mono-regular';
+		font-size: 0.85em;
+		position: absolute;
+		right: 0;
+	}*/
+	.target[data-type="button"] {
+		height: auto;
+		padding: 6px 12px;
+	}
+}
+
+/* MEDIA QUERIES */
+@media all and (min-width: 1262px) {
+	.layout {
+		margin: 0 auto;
+		overflow: visible;
+		padding-left: 0;
+		padding-right: 0;
+		position: relative;
+		width: 960px;
+	}
+	.layout:before, .layout:after {
+		content: '';
+		background-color: #e7e7e7;
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	.main.layout:before, .main.layout:after {
+		background-color: #fafafa;
+	}
+	.layout:before {
+		right: 100%;
+	}
+	.layout:after {
+		left: 100%;
+	}
+}

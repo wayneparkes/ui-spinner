@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Spinner API</title>
+
+		<link rel="stylesheet" type="text/css" href="content/css/default.css">
+
+		<script src="js/spinner.js" 
+			data-image="content/images/spinner.png" 
+			data-time="750">
+		</script>
+
+		<!--
+		Possible configurations to be added...
+		<script src="js/spinner.js" 
+			data-image="content/images/spinner.png" 
+			data-time="750" 
+			data-pos-x="left" 
+			data-pos-y="top" 
+			data-org-x="left" 
+			data-org-y="bottom" 
+			data-pad-w="{sw} * 2" 
+			data-pad-h="{sh} * 2" 
+			data-scale="0.5"></script>
+		-->
+
+		<script>
+			function getClosest (selector) {
+				var scripts = document.getElementsByTagName('script')
+				,	thisScriptTag = scripts[scripts.length - 1];
+				return thisScriptTag.parentNode.querySelector(selector);
+			}
+			(function() {
+
+				function Sandbox (json) {
+					if (typeof json !== 'undefined' && 'buttons' in json) {
+
+						var frag = document.createDocumentFragment();
+
+						for (var i = 0; i < json.buttons.length; i++) {
+							var button = document.createElement('button');
+							button.innerHTML = json.buttons[i].text;
+
+							if (button.addEventListener) {
+								button.addEventListener('click', json.buttons[i].method, false);
+							} else if (window.attachEvent) {
+								button.attachEvent('onclick', json.buttons[i].method);
+							}
+
+							frag.appendChild(button);
+						}
+
+						json.controlPanel.appendChild(frag);
+					}
+				}
+
+				Sandbox.prototype = {
+				};
+
+				window.sandbox = {
+					create : function(json) {
+						return new Sandbox(json);
+					}
+				};
+			}());
+		</script>
+	</head>
+	<body>
+
+		<div class="layout header">
+			<h1>Spinner API</h1>
+			<p>Adds a Ui Spinner to any target to inform the user that an action is in progress. Usage examples include: attaching a spinner to a form's button which starts once the user submits the form and stops once a callback has been received from the submission handler, or attach a spinner to an image carousel and invoke it while the assets are preloading.</p>
+		</div>
+
+		<div class="layout main">
+
+			<div class="playground">
+
+				<div class="sandbox">
+					<h4>Left-aligned Spinner</h4>
+
+					<div class="panel" data-view="lab">
+						<div class="target" data-type="button">Button Text</div>
+					</div>
+
+					<div class="panel" data-view="controls"></div>
+
+					<div class="panel" data-view="config">
+						<dl>
+							<dt><code>image</code></dt>
+							<dd><code class="string">/images/spinner.png</code></dd>
+							<dt><code>time</code></dt>
+							<dd><code class="number">750</code></dd>
+							<dt><code>position</code></dt>
+							<dd><code class="string">left</code></dd>
+						</dl>
+					</div>
+
+					<script>
+						(function() {
+
+							var target = getClosest('.target');
+
+							sandbox.create({
+								controlPanel : getClosest('[data-view="controls"]')
+							,	buttons : [
+									{
+										text: 'Start'
+									,	method: function() {
+											if (!('spinner' in target)) {
+												spinner.create(target, { 'position' : 'left' });
+											}
+											target.spinner.start();
+										}
+									}
+								,	{
+										text: 'Stop'
+									,	method: function() {
+											if ('spinner' in target) {
+												target.spinner.stop();
+											}
+										}
+									}
+								,	{
+										text: 'Destroy'
+									,	method: function() {
+											if ('spinner' in target) {
+												target.spinner.destroy(function() {
+													alert('Callback: Spinner has been destroyed!');
+												});
+											}
+										}
+									}
+								]
+							});
+						}());
+					</script>
+				</div>
+
+				<div class="sandbox">
+					<h4>Bottom-aligned Spinner</h4>
+
+					<div class="panel" data-view="lab">
+						<div class="target" data-type="button">Button Text</div>
+					</div>
+
+					<div class="panel" data-view="controls"></div>
+
+					<div class="panel" data-view="config">
+						<dl>
+							<dt><code>image</code></dt>
+							<dd><code class="string">/images/spinner.png</code></dd>
+							<dt><code>time</code></dt>
+							<dd><code class="number">750</code></dd>
+							<dt><code>position</code></dt>
+							<dd><code class="string">bottom</code></dd>
+						</dl>
+					</div>
+
+					<script>
+						(function() {
+
+							var target = getClosest('.target');
+
+							sandbox.create({
+								controlPanel : getClosest('[data-view="controls"]')
+							,	buttons : [
+									{
+										text: 'Start'
+									,	method: function() {
+											if (!('spinner' in target)) {
+												spinner.create(target, { 'position' : 'bottom' });
+											}
+											target.spinner.start();
+										}
+									}
+								,	{
+										text: 'Stop'
+									,	method: function() {
+											if ('spinner' in target) {
+												target.spinner.stop();
+											}
+										}
+									}
+								,	{
+										text: 'Destroy'
+									,	method: function() {
+											if ('spinner' in target) {
+												target.spinner.destroy(function() {
+													alert('Callback: Spinner has been destroyed!');
+												});
+											}
+										}
+									}
+								]
+							});
+						}());
+					</script>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="layout footer">
+			<p>&copy; 2014.</p>
+		</div>
+
+	</body>
+</html>
